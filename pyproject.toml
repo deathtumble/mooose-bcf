@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "bcf"
+name = "mooose-bcf"
 version = "0.1.0"
 description = ""
 authors = ["Murray Tait <murray.tait@infinityworks.com>"]
@@ -8,6 +8,11 @@ authors = ["Murray Tait <murray.tait@infinityworks.com>"]
 python = "^3.8"
 
 [tool.poetry.dev-dependencies]
+pytest = "^7.0.1"
+pytest-html = "^3.1.1"
+mock = "^4.0.3"
+flake8 = "^4.0.1"
+black = "^22.1.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
