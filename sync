@@ -1,0 +1,22 @@
+#!/bin/bash
+
+i=1
+sp="/-\|"
+
+set -e
+
+mkdir -p build/sync/out
+
+quiet=false
+if [ "$1" == "-q" ]; then
+    quiet=true
+fi
+
+while true
+do
+    if [ "$quiet" = false ]; then
+        printf "\b${sp:i++%${#sp}:1}"
+    fi
+    sleep 2
+    time gsutil rsync -i -r -u build/sync/out gs://bcf > /dev/null 2> /dev/null
+done

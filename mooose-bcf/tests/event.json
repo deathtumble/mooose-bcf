@@ -1,0 +1,23 @@
+{
+      "kind": "storage#object",
+      "size": "559355",
+      "timeCreated": "2022-03-01T18:03:38.480Z",
+      "id": "bcf/activity_187550148.gpx/1646157818470297",
+      "mediaLink": "https://www.googleapis.com/download/storage/v1/b/bcf/o/activity_187550148.gpx?generation=1646157818470297&alt=media",
+      "timeStorageClassUpdated": "2022-03-01T18:03:38.480Z",
+      "selfLink": "https://www.googleapis.com/storage/v1/b/bcf/o/activity_187550148.gpx",
+      "updated": "2022-03-01T18:03:38.480Z",
+      "storageClass": "STANDARD",
+      "metadata": {
+        "goog-reserved-file-mtime": "1646157813"
+      },
+      "crc32c": "Bq69Jg==",
+      "bucket": "bcf",
+      "contentType": "application/octet-stream",
+      "name": "activity_187550148.gpx",
+      "generation": "1646157818470297",
+      "contentLanguage": "en",
+      "md5Hash": "WrsEkrj8z5xHqgrGhtMHAg==",
+      "metageneration": "1",
+      "etag": "CJm/juC/pfYCEAE="
+    }
