@@ -89,11 +89,11 @@ build/sync/out:
 	mkdir -p build/sync/out
 
 send-gpx: build/sync/out
-	cp data/activity_7516786611.gpx build/sync/out/activity_$$(date +'%Y%m%d%H%M%S').gpx 
+	cp data/sample.gpx build/sync/out/activity_$$(date +'%Y%m%d%H%M%S').gpx 
 	printf 'Upload finished %s\n' "$$(date --iso=seconds)"
 
 send-fit: build/sync/out
-	cp data/2021-08-22-06-31-22.fit build/sync/out/$$(date +'%Y-%m-%d-%H-%M-%S').fit
+	cp data/sample.fit build/sync/out/$$(date +'%Y-%m-%d-%H-%M-%S').fit
 	printf 'Creation finished %s\n' "$$(date --iso=seconds)"
 
 auth:
