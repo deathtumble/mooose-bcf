@@ -12,6 +12,7 @@ google-cloud = "^0.34.0"
 google-cloud-storage = "^2.1.0"
 google-cloud-bigquery = "^2.34.0"
 google-cloud-functions = "^1.5.1"
+fitparse = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0.1"

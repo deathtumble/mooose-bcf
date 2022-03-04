@@ -10,7 +10,7 @@ from main import hello_gcs
 @patch("main.put_rows")
 def test_main_happy_path(put_rows, read_file):
     # Arrange
-    gpx_file_name = "../../data/activity_187550148.gpx"
+    gpx_file_name = "../../data/activity_187550144.gpx"
     read_file.return_value = _get_file_contents(gpx_file_name)
     event = _get_json_file_contents("event.json")
     context = Mock()

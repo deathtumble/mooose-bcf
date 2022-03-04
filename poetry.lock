@@ -222,6 +222,14 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "fitparse"
+version = "1.2.0"
+description = "Python library to parse ANT/Garmin .FIT files"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "flake8"
 version = "4.0.1"
 description = "the modular source code checker: pep8 pyflakes and co"
@@ -1474,7 +1482,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.8"
-content-hash = "23be14db9489f2ae8402682ede51c0ffe1106a1f988c6f431722fd40befd3c6b"
+content-hash = "752d2db7bd47c87282a743d4bea1fcfbded40f8c33b19aed935749f35d89e85e"
 
 [metadata.files]
 appnope = [
@@ -1667,6 +1675,9 @@ entrypoints = [
 executing = [
     {file = "executing-0.8.3-py2.py3-none-any.whl", hash = "sha256:d1eef132db1b83649a3905ca6dd8897f71ac6f8cac79a7e58a1a09cf137546c9"},
     {file = "executing-0.8.3.tar.gz", hash = "sha256:c6554e21c6b060590a6d3be4b82fb78f8f0194d809de5ea7df1c093763311501"},
+]
+fitparse = [
+    {file = "fitparse-1.2.0.tar.gz", hash = "sha256:2d691022452dea6dabad13cc6e017ca467fe8a3a895cd3ac67a50a7bb716b4a9"},
 ]
 flake8 = [
     {file = "flake8-4.0.1-py2.py3-none-any.whl", hash = "sha256:479b1304f72536a55948cb40a32dce8bb0ffe3501e26eaf292c7e60eb5e0428d"},
