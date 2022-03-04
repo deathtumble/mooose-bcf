@@ -1,5 +1,4 @@
 from io import BytesIO
-from dateutil.parser import isoparse
 
 import fitparse
 
