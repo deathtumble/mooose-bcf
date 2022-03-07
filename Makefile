@@ -21,31 +21,39 @@ BUILD_REF_LOCATION = gs://${BUILD_BUCKET}/builds/${ARTIFACT_NAME}/${GIT_REF}
 
 RAND = $(shell ${RANDOM})
 
-.PHONY: unittest 
+.PHONY: unittest install-python install-poetry
 
 clean-terraform:
 	rm -f terraform/.terraform
 
 clean:
 	rm -rf build
+	rm -rf .venv
+
+.venv/bin:
+	python3 -m venv .venv
+	. .venv/bin/activate
+	python3 -m pip install poetry
+	poetry install
+	touch .venv/bin
 
 poetry.lock: pyproject.toml poetry.toml
 	. .venv/bin/activate \
 	poetry lock
 	touch poetry.lock
 
-.venv/bin/python:
-	python3 -m venv .venv
-	. .venv/bin/activate
-	python3 -m pip3 install --upgrade pip
-	python3 -m pip3 install poetry
-
 .venv/lib: poetry.lock pyproject.toml poetry.toml
 	poetry install
+	touch .venv/lib
 
-.venv: .venv/bin/python .venv/lib
+.venv: .venv/bin .venv/lib
+	touch .venv
 
-unittest:
+install-python: .venv
+	
+install: install-python
+
+unittest: .venv
 	${ACTIVATE} && GIT_REF=${GIT_REF} ${POETRY} run pytest --junitxml=${BUILD_DIR}/test-reports/unittest.xml --html=${BUILD_DIR}/test-reports/html/unittest.html
 
 ${BUILD_DIR}:
@@ -64,7 +72,7 @@ build/function.zip: ${python_objects} ${BUILD_DIR}/function/requirements.txt
 	rm -f $@
 	cd ${BUILD_DIR}/function && zip -ur ../function.zip *
 
-upload-builds: ${BUILD_DIR}/function.zip
+upload-function: ${BUILD_DIR}/function.zip
 	@if [ "${GIT_DIRTY}" = "false" ]; then \
 		gsutil cp ${BUILD_DIR}/function.zip ${BUILD_OBJECT_LOCATION}/function.zip; \
 	fi

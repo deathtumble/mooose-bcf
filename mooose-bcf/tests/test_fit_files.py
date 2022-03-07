@@ -12,19 +12,16 @@ def test_fit_files_happy_path():
     # Act
     rows = read_fit_file(activity_id, contents)
     assert len(rows) == 6280
-    assert rows[6279] == {
-        'altitude': 106.39999999999998,
-        'distance': 131983.66,
-        'effort': '20210822063125',
-        'enhanced_altitude': 106.39999999999998,
-        'enhanced_speed': 0.551,
-        'heart_rate': 131,
-        'position_lat': 676720078,
-        'position_long': -44990738,
-        'speed': 0.551,
-        'temperature': 14,
-        'time': 1632051220.0
-    }
+    assert rows[6279]['altitude'] == 106.39999999999998
+    assert rows[6279]['distance'] == 131983.66
+    assert rows[6279]['effort'] == '20210822063125'
+    assert rows[6279]['enhanced_altitude'] == 106.39999999999998
+    assert rows[6279]['enhanced_speed'] == 0.551
+    assert rows[6279]['heart_rate'] == 131
+    assert rows[6279]['position_lat'] == 676720078
+    assert rows[6279]['position_long'] == -44990738
+    assert rows[6279]['speed'] == 0.551
+    assert rows[6279]['temperature'] == 14
 
 
 def _get_file_bytes_contents(file_path: str) -> dict:
