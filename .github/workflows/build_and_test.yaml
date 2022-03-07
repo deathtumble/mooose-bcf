@@ -23,4 +23,15 @@ jobs:
         run: |
           . .venv/bin/activate
           make unittest
-
+      - name: Archive test reports
+        if: success() || failure()
+        uses: actions/upload-artifact@v2.2.3
+        with:
+          name: unittest-reports
+          path: build/test-reports/html/*
+      - name: Publish Test Report
+        if: success() || failure()
+        uses: mikepenz/action-junit-report@v2
+        with:
+          check_name: Unit Tests
+          report_paths: build/test-reports/unittest.xml
