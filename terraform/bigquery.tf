@@ -50,6 +50,11 @@ resource "google_bigquery_table" "gpx" {
         },
         {
             "mode":"NULLABLE",
+            "name":"distance",
+            "type":"FLOAT"
+        },
+        {
+            "mode":"NULLABLE",
             "name":"hr",
             "type":"INTEGER"
         },
